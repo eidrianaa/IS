@@ -1,0 +1,27 @@
+identic6(x[1..n])
+rez ← True
+i ← 1
+while i < n do
+    i ← i + 1
+    if x[i − 1] != x[i] then
+        rez ← False
+    end if
+end while
+return rez
+
+
+#preconditie: x[1..n], unde n>=1
+#postconditie: True daca toate elementele lui x[1..n] sunt identice si false in caz contrar
+
+#inainte de intrarea in while, rez este True, ceea ce inseamna ca toate elementele sunt deja identice
+#neavand termen de comparatie, primul element este identic cu el insusi
+#in intrarea in while, rez devine False doar in momentul in care se gaseste un element diferit fata de cel dinaineta lui
+#presupunem ca invariantul ar fi rez=False daca x[0]!=x[i], i>=1 si i<n
+#sa presupunem x[1..n]=[1, 1, 2]
+#i=1
+#se compara x[0] cu cu x[1] si rez ramane neschimbat
+#i=2
+#se compara x[1] cu x[2] si rez devine False
+#i=3
+#se opreste bucla
+#invariantul este astfel corect, astfel programul este corect
